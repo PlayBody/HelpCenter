@@ -3,7 +3,7 @@
 @section('title', 'Categories')
 
 @section('content')
-    
+
 <div class="row">
     <div class="col-12 ">
     <div class="card">
@@ -40,17 +40,9 @@
                     @enderror
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Sub Title</label>
-                    <input type="text" class="form-control" name="sub_title" placeholder="Category Sub Title" value="{{ $category->sub_title }}">
-                    @error('sub_title')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Description</label>
-                    <textarea name="description" class="form-control">{{ $category->description }}</textarea>
-                    
-                    @error('description')
+                    <label for="exampleInputPassword1">Order Number</label>
+                    <input type="text" class="form-control" name="order_num" placeholder="Category Sub Title" value="{{ $category->order_num }}">
+                    @error('order_num')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                   </div>
@@ -108,7 +100,7 @@ $(function() {
             },
             progressall: function(e, data) {
                 var progress = parseInt(data.loaded / data.total * 100, 10);
-                
+
                 console.log(progress);
                 $('.progress .progress-bar').css(
                     'width',

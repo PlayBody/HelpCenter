@@ -9,9 +9,14 @@ use Illuminate\Routing\Controller as BaseController;
 
 class DashboardController extends BaseController
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+    }
+
     public function index($indicator_period = 2)
     {
- 
         return view('admin.dashboard');
     }
 }

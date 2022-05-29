@@ -18,7 +18,7 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'sub_title', 'description', 'icon_url'];
+    protected $fillable = ['title', 'order_num', 'icon_url'];
 
     /**
      * The attributes that are not mass assignable.
