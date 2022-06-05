@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>{{ config('app.name') }} | Admin</title>
+  <title>{{ config('app.name') }}</title>
 
     <link rel="stylesheet" media="all" href="{{ asset('css/front/application-eee6d8d7fa05e7e79d4f3bfce1e548f7.css') }}" id="stylesheet">
     <link rel="stylesheet" media="all" href="{{ asset('css/front/theming_v1_support-cf937686d5b6669242017892da7bad78.css') }}">
@@ -15,6 +15,8 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/handlebars.min.js') }}"></script>
     <script src="{{ asset('js/lodash.min.js') }}"></script>
+    <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -59,56 +61,36 @@
                         </a>
 
                         <div class="contact-details d-none">
-                            <div id="js-chat-item" class="contact-item" style="display: none;">
+                            <div id="js-chat-item" class="contact-item">
                                 <a href="#" class="trigger-chat">
                                     <div class="contact-item-header">
                                         <span class="contact-icon chat-icon"></span>
                                         <h3>Live Chat</h3>
                                     </div>
-
                                     <p>Monday-Friday: 8am-8:30pm <br>
                                         Saturday-Sunday: 9am-5:30pm <br> <br>
-
                                         <i> (Average wait: 2 mins) </i>
-
                                     </p>
                                     <p><br></p>
                                 </a>
                             </div>
                             <div id="js-chat-item" class="contact-item">
-                                <a href="https://wa.me/443442571888">
+                                <a href="{{ url('/contact/phone') }}">
                                     <div class="contact-item-header">
                                         <span class="contact-icon whatsapp-icon"></span>
-                                        <h3>WhatsApp</h3>
+                                        <h3>Phone Callback</h3>
                                     </div>
+                                    <p><br></p>
 
-                                    <p>Monday-Friday: 8am-8:30pm<br>
-                                        Saturday-Sunday: 9am-5:30pm
-
-                                    </p>
-                                </a>
-                            </div>
-
-                            <div id="js-chat-item" class="contact-item">
-                                <a href="http://m.me/Madedotcom">
-                                    <div class="contact-item-header">
-                                        <span class="contact-icon messenger-icon"></span>
-                                        <h3>Facebook Messenger</h3>
-                                    </div>
-
-                                    <p>Monday-Friday: 8am-5:30pm<br>
-                                        Saturday-Sunday: 9am-5:30pm
-                                    </p>
                                 </a>
                             </div>
 
                             <div class="contact-item">
-                                <a href="/hc/en-gb/requests/new">
+                                <a href="{{ url('/contact/email') }}">
                                     <div class="contact-item-header">
                                         <span class="contact-icon email-icon"></span>
                                         <h3>Email Us</h3>
                                     </div>
-
                                     <p><br></p>
                                 </a>
                             </div>
@@ -181,6 +163,21 @@
 
 </script>
 @yield('footer_scripts')
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/62971b58b0d10b6f3e7513e5/1g4f45kuo';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>
 

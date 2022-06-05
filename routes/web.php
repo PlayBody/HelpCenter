@@ -12,9 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
 Route::get('/', ['uses' => 'App\Http\Controllers\HomeController@index']);
 
 Route::get('/all', ['uses' => 'App\Http\Controllers\HomeController@allquery']);
@@ -23,10 +20,14 @@ Route::get('/category/{category_id}', ['uses' => 'App\Http\Controllers\HomeContr
 Route::get('/question/{question_id}', ['uses' => 'App\Http\Controllers\HomeController@question']);
 Route::post('/recommend', ['uses' => 'App\Http\Controllers\HomeController@recommend']);
 
-
-
 Route::post('/search/query', ['uses' => 'App\Http\Controllers\HomeController@search']);
 Route::get('/search/query', ['uses' => 'App\Http\Controllers\HomeController@search']);
+Route::get('/contact/email', ['uses' => 'App\Http\Controllers\ContactController@mailshow']);
+Route::post('/contact/email', ['uses' => 'App\Http\Controllers\ContactController@mailsend']);
+Route::post('/contact/attachupload', ['uses' => 'App\Http\Controllers\ContactController@upload']);
+Route::get('/contact/phone', ['uses' => 'App\Http\Controllers\ContactController@phoneshow']);
+Route::post('/contact/phone', ['uses' => 'App\Http\Controllers\ContactController@phonesend']);
+
 
 
 Route::get('/admin', ['uses' => 'App\Http\Controllers\Admin\DashboardController@index']);
@@ -49,3 +50,4 @@ Route::get('/admin/questions/delete/{del_id}', ['uses' => 'App\Http\Controllers\
 
 //Route::get('/admin/security', ['uses' => 'App\Http\Controllers\Admin\SecurityController@index']);
 //Route::post('/admin/security', ['uses' => 'App\Http\Controllers\Admin\SecurityController@index']);
+
